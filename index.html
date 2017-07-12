@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>侧边栏</title>
+	<style type="text/css">
+
+
+		html,body,div,ul,li,a,span{
+			padding:0;
+			margin:0;
+		}
+		a{
+			text-decoration: none;
+		}
+		li{
+			list-style: none;
+		}
+		html,body{
+			height:100%;
+		}
+
+		div.toolbar{
+			width: 35px;
+			height:100%;
+			background-color: #df9500;
+
+			position: fixed;
+			top:0;
+			right:0;
+			padding-top:100px;
+		}
+
+		.toolbar ul li{
+			width:35px;
+			height:30px;
+			background:url(images/toolbars.png) no-repeat;
+			position: relative;
+			margin-top: 15px;
+			cursor:pointer; 
+			text-align: center;
+			
+		}
+		.toolbar a{
+			font-family: "微软雅黑"	
+		}
+
+		ul li.item1{
+			background-position:1px 5px;
+		}
+		ul li.item2{
+			background-position:1px -24px;
+		}
+		ul li.item3{
+			background-position:1px -47px;
+		}
+		ul li.item4{
+			background-position:1px -71px;
+		}
+		ul li.item5{
+			background-position:1px -94px;
+		}
+		
+
+		a.tip{
+			position: absolute;
+			right:90px;
+			width: 115px;
+			height:30px;
+			background-color: yellow;
+			font-size: 17px;
+			font-weight: bold;
+			color:white;
+			text-align: center;
+			line-height: 30px;
+			display:none;
+			
+		}
+
+		.bar{
+			position: absolute;
+			right:-10px;
+			color:yellow;
+			font-size: 30px;
+		}
+
+		.toolbar ul li.select{
+			background-color: orange;
+
+		}
+	
+	</style>
+</head>
+<body>
+
+	<div class="toolbar">
+
+		<ul>
+		
+			<li class="item1"> 
+				<a href="#" class="tip"> 
+					我的账号
+					<span class="bar">◆</span> 
+				</a>
+			</li>
+			
+			<li class="item2">
+				<a href="#" class="tip">
+					我的留言
+					<span class="bar">◆</span>
+				</a>
+			</li>
+			
+			<li class="item3">
+				<a href="#" class="tip">
+					我的钱包
+					<span class="bar">◆</span>
+				</a>
+			</li>
+			
+			<li class="item4">
+				<a href="#" class="tip">
+					我的足迹
+					<span class="bar">◆</span>
+				</a>
+			</li>
+			
+			<li class="item5">
+				<a href="#" class="tip">
+					我的留言
+					<span class="bar">◆</span>
+				</a>
+			</li>
+		</ul>
+
+
+
+
+
+	</div>
+
+
+
+
+
+
+
+</body>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+
+
+$(".toolbar ul>li").hover(
+function(){
+	$(this).find(".tip")
+		   .stop()
+		   .show()
+		   .animate({right:"25px",opacity:"1"},500)
+	
+	$(this).addClass("select");
+
+}
+,function(){
+	$(this).find(".tip")
+		   .stop()
+		   .hide()
+		   .animate({right:"90px",opacity:"0"},500,function(){
+				
+	})
+
+	$(this).removeClass("select");
+}
+)
+
+
+
+
+</script>
+</html>
